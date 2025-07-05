@@ -11,7 +11,7 @@ import { getWeatherApiEndPoint } from "./utils.js/endpoint";
 
 function App() {
   const { updateWeather, history, weatherOfCity } = useWeather();
-  const { fetchData, error, loading } = useFetch();
+  const { fetchData, error, loading, data } = useFetch();
   const handleSearch = async city => {
     try {
       const data = await fetchData({ url: getWeatherApiEndPoint(city) });
@@ -24,7 +24,7 @@ function App() {
   };
   return (
     <div className="min-h-[500px] bg-blue-100/40 border-blue-300 rounded-2xl text-gray-800 p-4">
-      <div className="w-xl max-w-xl mx-auto">
+      <div className="lg:w-xl max-w-xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-6">
           🌤️ Outfit Recommender
         </h1>
@@ -33,7 +33,8 @@ function App() {
         {loading ? (
           <ShimmerCard />
         ) : (
-          weatherOfCity && (
+          weatherOfCity &&
+          data && (
             <div>
               <WeatherCard
                 name={weatherOfCity.name}

@@ -32,6 +32,7 @@ const useFetch = () => {
         return result;
       } catch (err) {
         setError(err.message || "Unknown error");
+        setData(null);
         return null;
       } finally {
         setLoading(false);

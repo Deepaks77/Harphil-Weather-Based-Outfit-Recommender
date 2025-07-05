@@ -1,4 +1,11 @@
-export default function WeatherCard({ name, temp, condition, humidity, wind }) {
+import React from "react";
+export default React.memo(function WeatherCard({
+  name,
+  temp,
+  condition,
+  humidity,
+  wind,
+}) {
   return (
     <div className="bg-white rounded-xl shadow-md p-4 text-center">
       <h2 className="text-xl font-semibold">{name}</h2>
@@ -9,4 +16,4 @@ export default function WeatherCard({ name, temp, condition, humidity, wind }) {
       <p>💧 Humidity: {humidity}%</p>
     </div>
   );
-}
+});
