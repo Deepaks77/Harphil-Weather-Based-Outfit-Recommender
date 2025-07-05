@@ -1,27 +1,35 @@
 // components/SearchBar.jsx
-import { useEffect, useState } from "react";
-import { useDebounce } from "../hooks/useDebounce";
+import { useState } from "react";
 
 export default function SearchBar({ onSearch }) {
   const [input, setInput] = useState("");
-  const debouncedInput = useDebounce(input, 400);
 
-  useEffect(() => {
-    if (debouncedInput.trim()) {
-      onSearch(debouncedInput.trim());
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (input.trim()) {
+      onSearch(input.trim());
+      setInput(""); // clear input
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedInput]);
+  };
 
   return (
-    <div className="flex justify-center gap-2 my-4">
+    <form
+      onSubmit={handleSubmit}
+      className="flex justify-center gap-2 my-4 max-w-md mx-auto"
+    >
       <input
-        className="border px-4 py-2 rounded-md w-full max-w-full text-black"
+        className="border px-4 py-2 rounded-md w-full text-black"
         type="text"
         placeholder="Enter city name..."
         value={input}
         onChange={e => setInput(e.target.value)}
       />
-    </div>
+      <button
+        type="submit"
+        className="bg-blue-500 text-white cursor-pointer px-4 py-2 rounded-md hover:bg-blue-600 "
+      >
+        Search
+      </button>
+    </form>
   );
 }
