@@ -1,36 +1,31 @@
-# Challenge: Weather-Based-Outfit-Recommender
+# 🌤️ Harphil Weather-Based Outfit Recommender
 
+A weather dashboard built with **React + Vite**, allowing users to search for any city and get the current weather conditions along with smart outfit suggestions.
 
+## 🧑‍💻 Tech Stack
 
+- **React 19** (Functional components & hooks)
+- **Vite 7** (Fast bundler and dev server)
+- **ESLint** (code linting and quality)
 
-## Installation & Setup
+## 📦 Getting Started
 
 ### Prerequisites
-- Node.js (version 14 or higher)
-- npm or yarn package manager
 
-### Installation Steps
+- Node.js **v20.19.0+**
+- Yarn (or npm/pnpm)
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Deepaks77/Harphil-Weather-Based-Outfit-Recommender.git
-   cd your-repo-name
-   ```
+### Installation
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/Deepaks77/harphil-weather-based-outfit-recommender.git
 
-3. **Start the development server**
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
+cd harphil-weather-based-outfit-recommender
 
-4. **Open your browser**
-   Navigate to `http://localhost:3000` to view the application.
+# Install dependencies
+yarn
 
+# Start development server
+yarn dev
+```
